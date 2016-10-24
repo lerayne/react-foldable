@@ -2,8 +2,8 @@
  * Created by M. Yegorov on 2016-04-29.
  */
 
+import React, {Component} from 'react';
 import ReactHeight from 'react-height';
-
 import css from './Foldable.css';
 
 import Test from './Test';
