@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/Test.jsx"],"names":["Test","name"],"mappings":";;;;;AAAA;;;;AAIO,IAAMA,sBAAO;AAChBC,QAAK;AADW,CAAb","file":"Test.js","sourcesContent":["/**\r\n * Created by M. Yegorov on 2016-10-24.\r\n */\r\n\r\nexport const Test = {\r\n    name:'TEST!!!!'\r\n};\r\n"]}
