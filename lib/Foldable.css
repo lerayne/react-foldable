@@ -15,7 +15,3 @@
     transform: rotate(-90deg);
     background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAgElEQVQ4T82S4QmAIBBGnztES7ROtWPUOi0R7ZBckKilZ0iQ/8Tz8b2PM1QeU/mffwFmoC9UWoBBZn2FFliBRoHsQAdsMUDuIzApAJmRtOd5KjGn4qLnACmVIHoOkFIJomsAefdVbtFLAJeKzLrW44K1TZTYh9/6W4C6V1qC7wEWl04UERNoMOIAAAAASUVORK5CYII=);
 }
-
-:local(.main) .children-container {
-    box-sizing: border-box;
-}

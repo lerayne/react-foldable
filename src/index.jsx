@@ -48,7 +48,7 @@ export default class Foldable extends Component {
             </div>
             <div className="body" style={{...animationStyle, ...bodyStyle}}>
                 <div ref={element => this.childrenContainer = element} className="children-container">
-                    <ReactHeight onHeightReady={height => {console.log('react-height', height);this.onHeightReady(height)}}>
+                    <ReactHeight onHeightReady={height => this.onHeightReady(height)}>
                         {children}
                     </ReactHeight>
                 </div>
@@ -67,6 +67,9 @@ export default class Foldable extends Component {
     onHeightReady(height) {
 
         if (this.state.expanded) {
+            
+            console.log('onHeightReady', height, this.childrenContainer.offsetHeight);
+            
             this.setState({
                 bodyStyle: {height: height},
             }, () => {
