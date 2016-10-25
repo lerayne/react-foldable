@@ -19,12 +19,11 @@ export default class Foldable extends Component {
         };
 
         if (typeof this.props.onToggle == 'function') {
-            this.onToggle = () => {
-                this.props.onToggle();
+            this.onToggle = (...args) => {
+                this.props.onToggle(...args);
             }
         } else {
-            this.onToggle = () => {
-            }
+            this.onToggle = () => {}
         }
     }
 
@@ -89,7 +88,7 @@ export default class Foldable extends Component {
                 this.setState({
                     bodyStyle: {height: this.childrenContainer.offsetHeight},
                     carrotStyle: {transform: 'rotate(0deg)'}
-                }, () => this.onToggle());
+                }, () => this.onToggle(this.childrenContainer.offsetHeight));
             });
 
             this.setState({
@@ -109,7 +108,7 @@ export default class Foldable extends Component {
             const timeout = setTimeout(()=> {
                 this.setState({
                     expanded: false
-                }, () => this.onToggle());
+                }, () => this.onToggle(this.childrenContainer.offsetHeight));
                 
             }, this.state.animationSpeed);
 
