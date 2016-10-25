@@ -6,8 +6,6 @@ import React, {Component} from 'react';
 import ReactHeight from 'react-height';
 import css from './Foldable.css';
 
-import Test from './Test';
-
 export default class Foldable extends Component {
     constructor(props) {
         super(props);
@@ -91,9 +89,7 @@ export default class Foldable extends Component {
                 this.setState({
                     bodyStyle: {height: this.childrenContainer.offsetHeight},
                     carrotStyle: {transform: 'rotate(0deg)'}
-                });
-
-                this.onToggle();
+                }, () => this.onToggle());
             });
 
             this.setState({
@@ -113,9 +109,8 @@ export default class Foldable extends Component {
             const timeout = setTimeout(()=> {
                 this.setState({
                     expanded: false
-                });
-
-                this.onToggle();
+                }, () => this.onToggle());
+                
             }, this.state.animationSpeed);
 
             this.setState({
