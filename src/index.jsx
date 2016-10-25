@@ -88,7 +88,7 @@ export default class Foldable extends Component {
                 this.setState({
                     bodyStyle: {height: this.childrenContainer.offsetHeight},
                     carrotStyle: {transform: 'rotate(0deg)'}
-                }, () => this.onToggle(this.childrenContainer.offsetHeight));
+                }, () => setTimeout(() => this.onToggle(this.childrenContainer.offsetHeight), this.state.animationSpeed))
             });
 
             this.setState({
@@ -108,7 +108,7 @@ export default class Foldable extends Component {
             const timeout = setTimeout(()=> {
                 this.setState({
                     expanded: false
-                }, () => this.onToggle(this.childrenContainer.offsetHeight));
+                }, () => this.onToggle(0));
                 
             }, this.state.animationSpeed);
 
