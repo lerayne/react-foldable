@@ -43,7 +43,9 @@ export default class Foldable extends Component {
 
         return <div className={classNames.join(' ')}>
             <div className="caption" style={{cursor:'pointer'}} onClick={e => this.toggle()}>
-                <span className="carrot" style={{...animationStyle, ...carrotStyle}}/>
+                <span className="carrot" style={{...animationStyle, ...carrotStyle}}>
+                    {this.props.carrot || null}
+                </span>
                 <span className="title">{title}</span>
             </div>
             <div className="body" style={{...animationStyle, ...bodyStyle}}>
@@ -88,7 +90,7 @@ export default class Foldable extends Component {
             const timeout = setTimeout(()=> {
                 this.setState({
                     bodyStyle: {height: this.childrenContainer.offsetHeight},
-                    carrotStyle: {transform: 'rotate(0deg)'}
+                    carrotStyle: this.props.carrotStyleOpen || {transform: 'rotate(0deg)'}
                 }, () => setTimeout(() => this.onToggle(this.childrenContainer.offsetHeight), this.state.animationSpeed))
             });
 
