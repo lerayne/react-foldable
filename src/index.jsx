@@ -30,7 +30,7 @@ export default class Foldable extends Component {
     render() {
 
         const {title, children, className}  = this.props;
-        const {bodyStyle, carrotStyle, animationSpeed} = this.state;
+        const {expanded, bodyStyle, carrotStyle, animationSpeed} = this.state;
 
         const animationStyle = {
             transition: `all ${animationSpeed}ms ease`
@@ -40,6 +40,10 @@ export default class Foldable extends Component {
             css.main,
             className
         ];
+        
+        if (expanded) {
+            classNames.push('expanded')
+        }
 
         return <div className={classNames.join(' ')}>
             <div className="caption" style={{cursor:'pointer'}} onClick={e => this.toggle()}>
