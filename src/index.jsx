@@ -13,7 +13,7 @@ export default class Foldable extends Component {
         this.state = {
             expanded: props.expanded || false,
             bodyStyle: {},
-            carrotStyle: {},
+            carrotStyle: props.expanded ? props.carrotStyleOpen || {transform: 'rotate(0deg)'} : {},
             timeout: false,
             animationSpeed: props.speed || 200
         };
